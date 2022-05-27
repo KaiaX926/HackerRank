@@ -1,0 +1,11 @@
+types, nums = [],[]
+for inpt in sys.stdin.readlines():
+    # inpt = inpt.split(' ')
+    # inpt = int(x for x in inpt)
+    inpt = [int(n) for n in inpt.split(' ')]
+    types.append(inpt[0])
+    nums.append(inpt[1:])
+M = nums[0][0]
+types, nums = types[1:], nums[1:]
+results = map(lambda x: sum(i**2 for i in x)%M, product(*nums))
+print(max(results))
