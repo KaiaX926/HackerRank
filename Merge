@@ -1,0 +1,18 @@
+def merge_the_tools(string, k):
+    temp = ''
+    for i in range(len(string)):
+        if i%k == 0:
+            if len(temp) != 0:
+                print(temp)
+            temp = string[i]
+        else:
+            if string[i] not in temp:
+                temp += string[i]
+    print(temp)
+    return 
+         
+            
+        
+    # your code goes here
+
+if __name__ == '__main__':
