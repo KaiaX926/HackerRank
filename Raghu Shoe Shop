@@ -1,0 +1,16 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import sys
+from collections import Counter
+
+n = int(input())
+sizes = Counter(map(int,input().split()))
+key, val = list(sizes.keys()), list(sizes.values())
+x = int(input())
+wage = 0
+for i in range(x):
+    a,b = map(int,input().split())
+    if a in key and val[key.index(a)] > 0:
+            val[key.index(a)] -= 1
+            wage += b
+print(wage)
+    
